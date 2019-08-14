@@ -2,23 +2,22 @@
 
 namespace Expressly\Subscriber;
 
-use Expressly\Event\MerchantEvent;
 use Expressly\Event\PasswordedEvent;
-use Silex\Application;
+use Pimple\Container;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class MerchantSubscriber implements EventSubscriberInterface
 {
-    private $app;
+    private $container;
     private $routeProvider;
 
     const MERCHANT_REGISTER = 'merchant.register';
     const MERCHANT_DELETE = 'merchant.delete';
 
-    public function __construct(Application $app)
+    public function __construct(Container $container)
     {
-        $this->app = $app;
-        $this->routeProvider = $app['external_route.provider'];
+        $this->container = $container;
+        $this->routeProvider = $container['external_route.provider'];
     }
 
     public static function getSubscribedEvents()
@@ -29,6 +28,9 @@ class MerchantSubscriber implements EventSubscriberInterface
         );
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function onRegister(PasswordedEvent $event)
     {
         $route = $this->routeProvider->merchant_register;
@@ -46,6 +48,9 @@ class MerchantSubscriber implements EventSubscriberInterface
         $event->setResponse($response);
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function onDelete(PasswordedEvent $event)
     {
         $route = $this->routeProvider->merchant_delete;

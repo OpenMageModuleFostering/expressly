@@ -3,19 +3,18 @@
 namespace Expressly\ServiceProvider;
 
 use Expressly\Resolver\RouteResolver;
-use Silex\Application;
-use Silex\ServiceProviderInterface;
+use Pimple\Container;
+use Pimple\ServiceProviderInterface;
 
+/**
+ * @codeCoverageIgnore
+ */
 class RouteResolverServiceProvider implements ServiceProviderInterface
 {
-    public function register(Application $app)
+    public function register(Container $container)
     {
-        $app['route.resolver'] = $app->share(function ($app) {
-            return new RouteResolver($app, $app['config']['routes']);
-        });
-    }
-
-    public function boot(Application $app)
-    {
+        $container['route.resolver'] = function () use ($container) {
+            return new RouteResolver($container, $container['config']['routes']);
+        };
     }
 }

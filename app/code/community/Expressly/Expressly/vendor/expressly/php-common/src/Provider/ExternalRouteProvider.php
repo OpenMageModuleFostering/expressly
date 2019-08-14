@@ -2,21 +2,25 @@
 
 namespace Expressly\Provider;
 
+use Buzz\Client\Curl;
+use Buzz\Message\Request;
+use Buzz\Message\Response;
 use Doctrine\Common\Collections\ArrayCollection;
 use Expressly\Entity\ExternalRoute;
-use Silex\Application;
+use Pimple\Container;
 
 class ExternalRouteProvider implements ConfigProviderInterface
 {
     private $routes;
 
-    public function __construct(Application $app, $hosts, $routes)
+    public function __construct(Container $container, $hosts, $routes)
     {
         $this->routes = new ArrayCollection();
 
         foreach ($routes as $key => $definition) {
-            $route = new ExternalRoute();
-            $route->setHost($hosts[$definition['host']])
+            $route = new ExternalRoute(new Response(), new Request(), new Curl());
+            $route
+                ->setHost($hosts[$definition['host']])
                 ->setURI($definition['uri'])
                 ->setMethod($definition['method']);
 
@@ -24,7 +28,7 @@ class ExternalRouteProvider implements ConfigProviderInterface
                 $validation = array();
 
                 foreach ($definition['validation'] as $parameter => $validatorKey) {
-                    $validation[$parameter] = $app["{$validatorKey}.validator"];
+                    $validation[$parameter] = $container["{$validatorKey}.validator"];
                 }
 
                 $route->setRules($validation);

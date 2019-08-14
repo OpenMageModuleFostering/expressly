@@ -14,7 +14,7 @@ class Expressly_Expressly_BatchController extends AbstractController
     public function invoiceAction()
     {
         $this->getResponse()->setHeader('Content-type', 'application/json');
-        $route = $this->resolver->process($_SERVER['REQUEST_URI']);
+        $route = $this->resolver->process(preg_replace('/.*(expressly\/.*)/i', '/${1}', $_SERVER['REQUEST_URI']));
 
         if ($route instanceof Route) {
 
@@ -73,12 +73,13 @@ class Expressly_Expressly_BatchController extends AbstractController
     public function customerAction()
     {
         $this->getResponse()->setHeader('Content-type', 'application/json');
-        $route = $this->resolver->process($_SERVER['REQUEST_URI']);
+        $route = $this->resolver->process(preg_replace('/.*(expressly\/.*)/i', '/${1}', $_SERVER['REQUEST_URI']));
 
         if ($route instanceof Route) {
             $json = file_get_contents('php://input');
             $json = json_decode($json);
-            $customers = array();
+            $existing = array();
+            $pending = array();
 
             try {
                 if (!property_exists($json, 'emails')) {
@@ -86,25 +87,25 @@ class Expressly_Expressly_BatchController extends AbstractController
                 }
 
                 $customerModel = Mage::getModel('customer/customer');
-                $customerModel->setWebsiteId(Mage::app()->getWebsite()->getId());
 
                 foreach ($json->emails as $email) {
+                    $customerModel->setWebsiteId(Mage::app()->getWebsite()->getId());
                     $customerModel->loadByEmail($email);
 
                     if ($customerModel->getId()) {
                         if ($customerModel->getData('is_active')) {
-                            $customers['existing'][] = $email;
+                            $existing[] = $email;
                             continue;
                         }
 
-                        $customers['pending'][] = $email;
+                        $pending[] = $email;
                     }
                 }
             } catch (\Exception $e) {
                 $this->logger->error(ExceptionFormatter::format($e));
             }
 
-            $presenter = new BatchCustomerPresenter($customers);
+            $presenter = new BatchCustomerPresenter($existing, array(), $pending);
             $this->getResponse()->setBody(json_encode($presenter->toArray()));
         } else {
             $this->getResponse()->setHttpResponseCode(401);

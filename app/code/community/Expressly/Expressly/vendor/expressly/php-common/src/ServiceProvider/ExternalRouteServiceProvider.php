@@ -3,23 +3,22 @@
 namespace Expressly\ServiceProvider;
 
 use Expressly\Provider\ExternalRouteProvider;
-use Silex\Application;
-use Silex\ServiceProviderInterface;
+use Pimple\Container;
+use Pimple\ServiceProviderInterface;
 
+/**
+ * @codeCoverageIgnore
+ */
 class ExternalRouteServiceProvider implements ServiceProviderInterface
 {
-    public function register(Application $app)
+    public function register(Container $container)
     {
-        $app['external_route.provider'] = $app->share(function ($app) {
+        $container['external_route.provider'] = function () use ($container) {
             return new ExternalRouteProvider(
-                $app,
-                $app['config']['external']['hosts'],
-                $app['config']['external']['routes']
+                $container,
+                $container['config']['external']['hosts'],
+                $container['config']['external']['routes']
             );
-        });
-    }
-
-    public function boot(Application $app)
-    {
+        };
     }
 }

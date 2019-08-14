@@ -1,96 +1,44 @@
-## Introduction
-Common Expressly library. This library is written in Silex, with additional Symfony2 components, and Buzz to dispatch requests. All logic is handled by this library; child libraries should only wrap, and populate the existing functionality.
+[![Expressly](http://developer.buyexpressly.com/img/expressly-logo-sm-gray.png)](https://buyexpressly.com)
+# Expressly Plug-in PHP SDK
 
-## Style
-All code must follow `PSR-1/PSR-2` style guidelines.
+[![Latest Stable Version](https://poser.pugx.org/expressly/php-common/version)]( https://packagist.org/packages/expressly/php-common)
+[![Build Status](https://api.travis-ci.org/expressly/php-common.png)](https://travis-ci.org/expressly/php-common)
+[![Code Climate](https://codeclimate.com/github/expressly/php-common/badges/gpa.svg)](https://codeclimate.com/github/expressly/php-common)
+[![Test Coverage](https://codeclimate.com/github/expressly/php-common/badges/coverage.svg)](https://codeclimate.com/github/expressly/php-common/coverage)
 
-## Requirements
-- PHP 5.3+
-- composer (to be bundled)
-- Apache
-- nginx (to be done by myself)
+The Expressly PHP SDK provides as much of the heavy-lifting of the Expressly Network API to help developers wishing to
+integrate their rails e-commerce platform with the [Expressly network](https://buyexpressly.com).
 
-## Installation
-Basic installation:
+## Getting Started
 
-- `git clone git@github.com:expressly/php-common.git`
-- `composer install`
-- `chmod -R 777 ./storage`
+Requirements
+PHP 5.3+
+composer
+All composer dependencies are included in the Expressly provided integration releases on GitHub.
 
-Or, require the git repository as a composer dependency to the child library.
+Include
+Inside your composer.json, you need to include:
 
-There are a few sections of the library that must be populated, or overwritten for proper functionality.  
-Note: All references to an `$app` are directly linked to an instance of `Silex\Application`. This instance is returned from the `Expressly\Client`.
+    "require": {
+        "expressly/php-common": "2.3.12""
+    }
 
-### Database
-As we require the storage of merchant preferences, some settings must be updated, or overwritten.
-There is a Doctrine mapped fallback for `Expressly\Entity\Merchant` which utilizes default configuration values. If the eCommerce shop in question doesn't provide a database access API, the in-place fall-back is to be used.
-The fallback will be used by default, configuration values must be updated. These values are located in `/src/Resources/config/config.yml`, and have a yaml structure of:
+Or, run the command:
 
-    database:
-        driver: pdo_mysql
-        host: 127.0.0.1
-        dbname: expressly
-        user: root
-        password: ''
-        
-And
+    composer require expressly/php-common:2.3.12
 
-    table:
-        merchant: expressly_preferences
-        
-To overwrite in PHP, use the following command as an example:
-    
-    $app['config']['database']['dbname'] = 'expressly';
-    
-The following are to be saved in the merchants' database:
-- Hostname
-- Password (if not provided when calling `setPassword()`, a new password will be generated)
-- Offer: whether to show offers, or not
-- Redirect destination, if shop requires as such    
+## Documentation
 
-### Incoming Requests
-Incoming request must be handled by the child library. The following requests will be received, and must be handled:
+Documentation for this repository can be found [here](http://expressly.readthedocs.io/en/latest/)
 
-    ping:
-        pattern: /expressly/api/ping
-        method: [GET]
-        event: utility.ping
-    
-    customer migrate:
-        pattern: /expressly/api/user/{email}
-        method: [GET]
-        event: customer.migrate
-    
-    customer update:
-        pattern: /expressly/api/user/{email}
-        method: [POST]
-        event: customer.update
-    
-    customer reset:
-        pattern: /expressly/api/user/{email}/delete
-        method: [POST]
-        event: customer.reset
-    
-    customer order:
-        pattern: /expressly/api/user/{email}/order
-        method: [GET]
-        event: customer.order
+Further resources including popular e-commerce platform modules can be found on the 
+[Expressly developer portal](http://developer.buyexpressly.com).
 
+## License
 
-### Outgoing Requests
-All outgoing requests are sent via Buzz. These definitions are made in `/src/Resources/config/config.yml` in following structure:
+Copyright (c) 2015 Expressly. See LICENSE for further details.
 
-    external:
-        host: https://expresslyapp.com/api/v1
-        routes:
-            route_name:
-                method: METHOD
-                uri: /
+## One-click customer acquisition
 
-All logic for outgoing events is handled by this library. Event are in place to dispatch requests, the incoming information must be populated. All available events definitions are located in `Expressly\Subscriber\*::getSubscribedEvents()`. To call these events, please repurpose the following:
-
-    $app['dispatcher']->dispatch('customer.migrate', new Expressly\Event\CustomerMigrateEvent($customer, $email, $reference));
-    
-## Javascript
-Using the respective shop's inclusion method, the `/src/Resources/js/expressly.js` file must be included on the page. Upon including the file, an AJAX request will be auto-executed to request the modal from our servers.
+Expressly helps merchants grow by attracting new quality visitors from other online shops where people already buy, 
+while making it extremely convenient for them to convert to the new shop.

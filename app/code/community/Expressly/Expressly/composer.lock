@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f18fdb358a656dc735b3ca6792009461",
-    "content-hash": "cce78d797afa95bf7dd731b40b3e4c54",
+    "hash": "e26870ccafb34b683a7ac278c08e3c37",
+    "content-hash": "9c68f13dd90b90490300f63155f32be1",
     "packages": [
         {
             "name": "doctrine/collections",
@@ -75,16 +75,16 @@
         },
         {
             "name": "expressly/php-common",
-            "version": "2.5.0",
+            "version": "2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/expressly/php-common.git",
-                "reference": "e06a5222e01139fb7b4cc165b025a47d7db066cd"
+                "reference": "033bf74ad31c586823354f54b0f2234889567f8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/expressly/php-common/zipball/e06a5222e01139fb7b4cc165b025a47d7db066cd",
-                "reference": "e06a5222e01139fb7b4cc165b025a47d7db066cd",
+                "url": "https://api.github.com/repos/expressly/php-common/zipball/033bf74ad31c586823354f54b0f2234889567f8b",
+                "reference": "033bf74ad31c586823354f54b0f2234889567f8b",
                 "shasum": ""
             },
             "require": {
@@ -122,10 +122,10 @@
             ],
             "description": "Expressly common PHP library",
             "support": {
-                "source": "https://github.com/expressly/php-common/tree/2.5.0",
+                "source": "https://github.com/expressly/php-common/tree/2.7.1",
                 "issues": "https://github.com/expressly/php-common/issues"
             },
-            "time": "2016-11-30 16:01:48"
+            "time": "2017-06-26 23:21:41"
         },
         {
             "name": "kriswallsmith/buzz",
@@ -564,16 +564,16 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.8.14",
+            "version": "v2.8.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "a3784111af9f95f102b6411548376e1ae7c93898"
+                "reference": "19c11158da8d110cc5289c063bf2ec4cc1ce9e7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/a3784111af9f95f102b6411548376e1ae7c93898",
-                "reference": "a3784111af9f95f102b6411548376e1ae7c93898",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/19c11158da8d110cc5289c063bf2ec4cc1ce9e7c",
+                "reference": "19c11158da8d110cc5289c063bf2ec4cc1ce9e7c",
                 "shasum": ""
             },
             "require": {
@@ -609,7 +609,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-18 04:28:30"
+            "time": "2017-05-28 14:07:33"
         },
         {
             "name": "symfony/http-foundation",

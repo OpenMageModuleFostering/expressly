@@ -4,28 +4,19 @@ namespace Expressly\Presenter;
 
 class BatchCustomerPresenter implements PresenterInterface
 {
-    private $emails;
+    private $emails = array();
 
-    public function __construct(Array $emails)
+    public function __construct(Array $existing = array(), Array $deleted = array(), Array $pending = array())
     {
-        if (empty($emails['existing'])) {
-            $emails['existing'] = array();
-        }
-        if (empty($emails['deleted'])) {
-            $emails['deleted'] = array();
-        }
-        if (empty($emails['pending'])) {
-            $emails['pending'] = array();
-        }
-        $this->emails = $emails;
+        $this->emails = array(
+            'existing' => $existing,
+            'deleted' => $deleted,
+            'pending' => $pending
+        );
     }
 
     public function toArray()
     {
-        return array(
-            'existing' => $this->emails['existing'],
-            'deleted' => $this->emails['deleted'],
-            'pending' => $this->emails['pending']
-        );
+        return $this->emails;
     }
 }

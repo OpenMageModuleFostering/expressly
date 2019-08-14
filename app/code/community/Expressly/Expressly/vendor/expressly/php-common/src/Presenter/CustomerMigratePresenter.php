@@ -11,6 +11,7 @@ class CustomerMigratePresenter implements PresenterInterface
     private $customer;
     private $email;
     private $reference;
+    private $locale;
 
     public function __construct(Merchant $merchant, Customer $customer, $email, $reference, $locale = 'en')
     {

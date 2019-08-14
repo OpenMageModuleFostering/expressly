@@ -1,11 +1,9 @@
 {
     "name": "OpenMageModuleFostering/Expressly",
     "type": "magento-module",
-    "license": "MITL",
+    "license": "MIT",
     "homepage": "",
-    "description": "Expressly provides a platform that enables non-competing merchants to reach each others customers at extremely low cost, and in just one click.
-
-Full instructions, and registration at www.buyexpressly.com.",
+    "description": "Expressly is a customer referral network that allows merchants to find partner merchants and launch customer acquisition campaigns to their respective audiences. Full instructions, and registration at www.buyexpressly.com",
     "authors": [
     {
         "name": "Expressly",

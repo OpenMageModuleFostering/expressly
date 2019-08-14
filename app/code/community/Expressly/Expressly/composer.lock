@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "70a246ea36fe4b100e4e6152f20ae23b",
-    "content-hash": "9e84f3d9ef33a404a0a9e28bf4315ab0",
+    "hash": "7187fbbcd513d691a45fde3e4b56203c",
+    "content-hash": "9721c11ab46bc2ce73bbf877b7054ce6",
     "packages": [
         {
             "name": "doctrine/collections",
@@ -75,16 +75,16 @@
         },
         {
             "name": "expressly/php-common",
-            "version": "2.3.12",
+            "version": "2.3.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/expressly/php-common.git",
-                "reference": "483f3939927da9208aab110a8f187b31a43e4ed5"
+                "reference": "f6966e7fe89c8289a6aa0ea357fc6c8b194dcaab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/expressly/php-common/zipball/483f3939927da9208aab110a8f187b31a43e4ed5",
-                "reference": "483f3939927da9208aab110a8f187b31a43e4ed5",
+                "url": "https://api.github.com/repos/expressly/php-common/zipball/f6966e7fe89c8289a6aa0ea357fc6c8b194dcaab",
+                "reference": "f6966e7fe89c8289a6aa0ea357fc6c8b194dcaab",
                 "shasum": ""
             },
             "require": {
@@ -122,10 +122,10 @@
             ],
             "description": "Expressly common PHP library",
             "support": {
-                "source": "https://github.com/expressly/php-common/tree/2.3.12",
+                "source": "https://github.com/expressly/php-common/tree/2.3.20",
                 "issues": "https://github.com/expressly/php-common/issues"
             },
-            "time": "2016-06-01 12:55:12"
+            "time": "2016-09-20 12:43:03"
         },
         {
             "name": "kriswallsmith/buzz",
@@ -346,22 +346,30 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+                "reference": "5277094ed527a1c4477177d102fe4c53551953e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/5277094ed527a1c4477177d102fe4c53551953e0",
+                "reference": "5277094ed527a1c4477177d102fe4c53551953e0",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=5.3.0"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
-                "psr-0": {
-                    "Psr\\Log\\": ""
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -375,12 +383,13 @@
                 }
             ],
             "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
             "keywords": [
                 "log",
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2016-09-19 16:02:08"
         },
         {
             "name": "symfony/config",
@@ -555,16 +564,16 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.8.7",
+            "version": "v2.8.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "dee379131dceed90a429e951546b33edfe7dccbb"
+                "reference": "44b499521defddf2eae17a18c811bbdae4f98bdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/dee379131dceed90a429e951546b33edfe7dccbb",
-                "reference": "dee379131dceed90a429e951546b33edfe7dccbb",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/44b499521defddf2eae17a18c811bbdae4f98bdf",
+                "reference": "44b499521defddf2eae17a18c811bbdae4f98bdf",
                 "shasum": ""
             },
             "require": {
@@ -600,7 +609,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2016-04-12 18:01:21"
+            "time": "2016-09-06 10:55:00"
         },
         {
             "name": "symfony/http-foundation",

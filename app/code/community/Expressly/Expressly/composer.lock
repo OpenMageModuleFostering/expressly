@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d975199bb9ec13695adf5a564d83c249",
-    "content-hash": "2c04f8b22ce22c24b1235b4b5470568e",
+    "hash": "f18fdb358a656dc735b3ca6792009461",
+    "content-hash": "cce78d797afa95bf7dd731b40b3e4c54",
     "packages": [
         {
             "name": "doctrine/collections",
@@ -75,16 +75,16 @@
         },
         {
             "name": "expressly/php-common",
-            "version": "2.4.2",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/expressly/php-common.git",
-                "reference": "d402ce4c9b92fa18d92e6a093797214142b590e0"
+                "reference": "e06a5222e01139fb7b4cc165b025a47d7db066cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/expressly/php-common/zipball/d402ce4c9b92fa18d92e6a093797214142b590e0",
-                "reference": "d402ce4c9b92fa18d92e6a093797214142b590e0",
+                "url": "https://api.github.com/repos/expressly/php-common/zipball/e06a5222e01139fb7b4cc165b025a47d7db066cd",
+                "reference": "e06a5222e01139fb7b4cc165b025a47d7db066cd",
                 "shasum": ""
             },
             "require": {
@@ -122,10 +122,10 @@
             ],
             "description": "Expressly common PHP library",
             "support": {
-                "source": "https://github.com/expressly/php-common/tree/2.4.2",
+                "source": "https://github.com/expressly/php-common/tree/2.5.0",
                 "issues": "https://github.com/expressly/php-common/issues"
             },
-            "time": "2016-11-09 15:40:44"
+            "time": "2016-11-30 16:01:48"
         },
         {
             "name": "kriswallsmith/buzz",
@@ -564,7 +564,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.8.13",
+            "version": "v2.8.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",

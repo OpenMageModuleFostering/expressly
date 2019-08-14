@@ -34,21 +34,7 @@ class Expressly_Expressly_CustomerController extends AbstractController
                     $customer = new Customer();
                     $customer
                         ->setFirstName($mageCustomer->getFirstname())
-                        ->setLastName($mageCustomer->getLastname())
-                        ->setDateUpdated(new DateTime($mageCustomer->getCreatedAt()));
-
-                    if ($mageCustomer->getDob()) {
-                        $customer->setBirthday(new DateTime($mageCustomer->getDob()));
-                    }
-
-                    if ($mageCustomer->getTaxvat()) {
-                        $customer->setTaxNumber($mageCustomer->getTaxvat());
-                    }
-
-                    $gender = $mageCustomer->getGender();
-                    if ($gender == 1 || $gender == 2) {
-                        $customer->setGender($mageCustomer->getGender() == 1 ? 'M' : 'F');
-                    }
+                        ->setLastName($mageCustomer->getLastname());
 
                     $email = new Email();
                     $email
@@ -142,18 +128,6 @@ class Expressly_Expressly_CustomerController extends AbstractController
                     ->setEmail($email)
                     ->setPassword(md5('xly' . microtime()))
                     ->setIsSubscribed(true);
-
-                if ($customer['dob']) {
-                    $mageCustomer->setDob($customer['dob']);
-                }
-
-                if ($customer['taxNumber']) {
-                    $mageCustomer->setTaxvat($customer['taxNumber']);
-                }
-
-                if ($customer['gender'] && ($customer['gender'] == 'F' || $customer['gender'] == 'M')) {
-                    $mageCustomer->setGender($customer['gender'] == 'M' ? 1 : 2);
-                }
 
                 $mageCustomer->save();
 

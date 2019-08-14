@@ -155,7 +155,7 @@ class Customer extends ArraySerializeable
     public function addAddress(Address $address, $primary = false, $type = null)
     {
         $addresses = $this->addresses;
-        $exists = function ($el) use ($addresses, $address) {
+        $exists = function ($index, $el) use ($addresses, $address) {
             if ($el->toArray() == $address->toArray()) {
                 return true;
             }
@@ -163,11 +163,8 @@ class Customer extends ArraySerializeable
             return false;
         };
 
-        $matched = $this->addresses->filter($exists);
-        if ($matched->isEmpty()) {
+        if (!$this->addresses->exists($exists)) {
             $this->addresses->add($address);
-        } else {
-            $address = $matched->first();
         }
 
         if (!$primary) {

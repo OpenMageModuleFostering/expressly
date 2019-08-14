@@ -121,33 +121,25 @@
     },
     {
         "name": "psr/log",
-        "version": "1.0.1",
-        "version_normalized": "1.0.1.0",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/php-fig/log.git",
-            "reference": "5277094ed527a1c4477177d102fe4c53551953e0"
+            "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/php-fig/log/zipball/5277094ed527a1c4477177d102fe4c53551953e0",
-            "reference": "5277094ed527a1c4477177d102fe4c53551953e0",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+            "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
             "shasum": ""
         },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "time": "2016-09-19 16:02:08",
+        "time": "2012-12-21 11:40:51",
         "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
         "installation-source": "dist",
         "autoload": {
-            "psr-4": {
-                "Psr\\Log\\": "Psr/Log/"
+            "psr-0": {
+                "Psr\\Log\\": ""
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -161,7 +153,6 @@
             }
         ],
         "description": "Common interface for logging libraries",
-        "homepage": "https://github.com/php-fig/log",
         "keywords": [
             "log",
             "psr",
@@ -668,23 +659,23 @@
     },
     {
         "name": "symfony/filesystem",
-        "version": "v2.8.11",
-        "version_normalized": "2.8.11.0",
+        "version": "v2.8.6",
+        "version_normalized": "2.8.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/filesystem.git",
-            "reference": "44b499521defddf2eae17a18c811bbdae4f98bdf"
+            "reference": "dee379131dceed90a429e951546b33edfe7dccbb"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/filesystem/zipball/44b499521defddf2eae17a18c811bbdae4f98bdf",
-            "reference": "44b499521defddf2eae17a18c811bbdae4f98bdf",
+            "url": "https://api.github.com/repos/symfony/filesystem/zipball/dee379131dceed90a429e951546b33edfe7dccbb",
+            "reference": "dee379131dceed90a429e951546b33edfe7dccbb",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.9"
         },
-        "time": "2016-09-06 10:55:00",
+        "time": "2016-04-12 18:01:21",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -820,17 +811,17 @@
     },
     {
         "name": "expressly/php-common",
-        "version": "2.3.20",
-        "version_normalized": "2.3.20.0",
+        "version": "2.3.5",
+        "version_normalized": "2.3.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/expressly/php-common.git",
-            "reference": "f6966e7fe89c8289a6aa0ea357fc6c8b194dcaab"
+            "reference": "7e3a3aac471bb5213eadadd348df545a09013eaf"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/expressly/php-common/zipball/f6966e7fe89c8289a6aa0ea357fc6c8b194dcaab",
-            "reference": "f6966e7fe89c8289a6aa0ea357fc6c8b194dcaab",
+            "url": "https://api.github.com/repos/expressly/php-common/zipball/7e3a3aac471bb5213eadadd348df545a09013eaf",
+            "reference": "7e3a3aac471bb5213eadadd348df545a09013eaf",
             "shasum": ""
         },
         "require": {
@@ -851,7 +842,7 @@
         "require-dev": {
             "phpunit/phpunit": "4.6.6"
         },
-        "time": "2016-09-20 12:43:03",
+        "time": "2016-05-10 19:56:56",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -870,7 +861,7 @@
         ],
         "description": "Expressly common PHP library",
         "support": {
-            "source": "https://github.com/expressly/php-common/tree/2.3.20",
+            "source": "https://github.com/expressly/php-common/tree/2.3.5",
             "issues": "https://github.com/expressly/php-common/issues"
         }
     }

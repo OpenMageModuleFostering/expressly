@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Expressly",
+    "name": "OpenMageModuleFostering\/Expressly",
     "type": "magento-module",
     "license": "MIT",
     "homepage": "",
     "description": "Expressly is a customer referral network that allows merchants to find partner merchants and launch customer acquisition campaigns to their respective audiences. Full instructions, and registration at www.buyexpressly.com",
     "authors": [
-    {
-        "name": "Expressly",
-        "email": "info@expressly.com"
-    }
-],
+        {
+            "name": "Expressly",
+            "email": "info@expressly.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
